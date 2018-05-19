@@ -23,6 +23,8 @@ namespace cliente_servidor
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
     }
 }
