@@ -22,7 +22,11 @@ namespace cliente_servidor.controladores
             this.uri = uri;
         }
 
-        public void request()
+        public CVentas()
+        {
+        }
+
+        public List<Ventas> request()
         {
             WebClient webClient = new WebClient();
             webClient.Headers.Add("Content-Type", "application/json");
@@ -30,6 +34,7 @@ namespace cliente_servidor.controladores
             Byte[] responseArray = webClient.UploadData(this.uri, "GET", byteArray);
             string response = Encoding.ASCII.GetString(responseArray);
             ventas = JsonConvert.DeserializeObject<List<Ventas>>(response);
+            return ventas;
         }
     }
 }
