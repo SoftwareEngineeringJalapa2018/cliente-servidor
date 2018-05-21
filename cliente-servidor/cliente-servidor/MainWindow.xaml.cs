@@ -57,11 +57,16 @@ namespace cliente_servidor
 
         public void crearRequest()
         {
-            
-            CVentas inventory = new CVentas();
+            string valor = comboBox.SelectedValue.ToString();
+            string url = asignarUrl(valor);   
+            CVentas inventory = new CVentas(url);
             List<Ventas> lista = inventory.request();
-            
+            datos.ItemsSource = lista;
         }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            crearRequest();
+        }
     }
 }
