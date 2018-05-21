@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using cliente_servidor.controladores;
+using cliente_servidor.modelos;
 
 namespace cliente_servidor
 {
@@ -23,6 +25,48 @@ namespace cliente_servidor
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+        public string asignarUrl(string backend)
+        {
+            string uri;
+            switch (backend)
+            {
+                case "PHP":
+                    uri = "http://192.168.1.113:5000/inventory/stock";
+                    return uri;
+                case "C#":
+                    uri = "http://192.168.1.110:5000/inventory/stock";
+                    return uri;
+                case "Java":
+                    uri = "http://192.168.1.111:5000/inventory/stock";
+                    return uri;
+                case "Go":
+                    uri = "http://192.168.1.112:5000/inventory/stock";
+                    return uri;
+                case "NodeJs":
+                    uri = "http://192.168.1.115:5000/inventory/stock";
+                    return uri;
+                case "Python":
+                    uri = "http://192.168.1.114:5000/inventory/stock";
+                    return uri;
+                default:
+                    return null;
+            }
+        }
+
+        public void crearRequest()
+        {
+            string valor = comboBox.SelectedValue.ToString();
+            string url = asignarUrl(valor);   
+            CVentas inventory = new CVentas(url);
+            List<Ventas> lista = inventory.request();
+            datos.ItemsSource = lista;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            crearRequest();
         }
     }
 }

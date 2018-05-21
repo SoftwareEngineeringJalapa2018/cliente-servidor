@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace cliente_servidor.modelos
 {
-    class Ventas
+    public class Ventas
     {
-        public int id { get; set; }
-        public string nombreProducto { get; set; }
-        public int stuck { get; set;}
-        public DateTime fechaVendido { get; set; }
-        public string nombreCliente { get; set; }
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public int QuantitySold { get; set;}
+        public DateTime LastSoldDate { get; set; }
+        public string BestCustomer { get; set; }
     }
 }

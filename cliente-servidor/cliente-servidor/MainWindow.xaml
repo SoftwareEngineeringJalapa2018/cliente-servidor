@@ -5,10 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cliente_servidor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="538.659">
     <Grid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="17.6" Margin="39,49.2,0,0" VerticalAlignment="Top" Width="140"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="22" Margin="39,49,0,0" VerticalAlignment="Top" Width="140">
+            <ComboBoxItem Content="Java" HorizontalAlignment="Left" Width="137.6"/>
+        </ComboBox>
         <Label x:Name="label" Content="Backend:" HorizontalAlignment="Left" Margin="39,18.24,0,0" VerticalAlignment="Top" Width="60.227"/>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="314" Margin="411,7,0,-0.2" VerticalAlignment="Top" Width="3"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="36" Margin="439,87,0,0" Stroke="Black" VerticalAlignment="Top" Width="55"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="36" Margin="439,148,0,0" Stroke="Black" VerticalAlignment="Top" Width="55"/>
+        <DataGrid x:Name="datos" HorizontalAlignment="Left" Height="143" Margin="39,123,0,0" VerticalAlignment="Top" Width="332">
+            <DataGrid.Effect>
+                <DropShadowEffect/>
+            </DataGrid.Effect>
+        </DataGrid>
+        <Button x:Name="button" Content="Enviar Solicitud" HorizontalAlignment="Left" Height="23" Margin="430,44,0,0" VerticalAlignment="Top" Width="88" Click="button_Click"/>
 
     </Grid>
 </Window>
