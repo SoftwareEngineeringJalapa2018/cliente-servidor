@@ -46,6 +46,7 @@ namespace cliente_servidor
                     return uri;
                 case "NodeJs":
                     uri = "http://192.168.1.115:5000/inventory/stock";
+                    //uri = "http://localhost:3000/sales/discount";
                     return uri;
                 case "Python":
                     uri = "http://192.168.1.114:5000/inventory/stock";
@@ -57,15 +58,18 @@ namespace cliente_servidor
 
         public void crearRequest()
         {
-            string valor = comboBox.SelectedValue.ToString();
+            string valor = comboBox.SelectionBoxItem.ToString();
             string url = asignarUrl(valor);   
             CVentas inventory = new CVentas(url);
             List<Ventas> lista = inventory.request();
             datos.ItemsSource = lista;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show(asignarUrl(comboBox.SelectionBoxItem.ToString()));
             crearRequest();
         }
     }

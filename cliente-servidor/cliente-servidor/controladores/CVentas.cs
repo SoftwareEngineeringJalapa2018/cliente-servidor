@@ -22,19 +22,20 @@ namespace cliente_servidor.controladores
             this.uri = uri;
         }
 
-        public CVentas()
-        {
-        }
 
         public List<Ventas> request()
         {
             WebClient webClient = new WebClient();
             webClient.Headers.Add("Content-Type", "application/json");
+            param = webClient.DownloadString(uri);
+            //System.Windows.MessageBox.Show(param);
             Byte[] byteArray = Encoding.ASCII.GetBytes(param);
-            Byte[] responseArray = webClient.UploadData(this.uri, "GET", byteArray);
-            string response = Encoding.ASCII.GetString(responseArray);
+            //System.Windows.MessageBox.Show(byteArray.ToString());
+            //Byte[] responseArray = webClient.UploadData(uri, "GET", byteArray);
+            string response = Encoding.ASCII.GetString(byteArray);
             ventas = JsonConvert.DeserializeObject<List<Ventas>>(response);
             return ventas;
+           
         }
     }
 }

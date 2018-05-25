@@ -13,5 +13,11 @@ namespace cliente_servidor.modelos
         public int QuantitySold { get; set;}
         public DateTime LastSoldDate { get; set; }
         public string BestCustomer { get; set; }
+
+        /*public int SalesOrderID { get; set; }
+        public int CustomerID { get; set; }
+        public string Name { get; set; }
+        public double total_sales { get; set; }
+        public double discounts { get; set; }*/
     }
 }
