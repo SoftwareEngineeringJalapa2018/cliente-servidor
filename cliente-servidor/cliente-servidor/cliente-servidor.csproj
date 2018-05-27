@@ -78,6 +78,9 @@
   <ItemGroup>
     <Compile Include="modelos\Prueba.cs" />
     <Compile Include="modelos\Ventas.cs" />
+    <Compile Include="modelos\VentasC.cs" />
+    <Compile Include="modelos\VentasJava.cs" />
+    <Compile Include="modelos\VentasPhp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

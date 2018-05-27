@@ -6,29 +6,40 @@
         xmlns:local="clr-namespace:cliente_servidor"
         xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" x:Class="cliente_servidor.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="429.858" Width="610.149" Background="#FFDACF6A">
-    <Grid>
-        <DataGrid x:Name="datos" HorizontalAlignment="Left" Height="212" Margin="40,164,0,0" VerticalAlignment="Top" Width="515">
-            <DataGrid.Effect>
-                <DropShadowEffect ShadowDepth="4"/>
-            </DataGrid.Effect>
-        </DataGrid>
+        Title="MainWindow" WindowStyle="None" Height="542.658" Width="610.149" Background="Transparent" AllowsTransparency="True">
+    <Border CornerRadius="50" Background="#FFDACF6A" BorderThickness="4" BorderBrush="RosyBrown">
+        <Grid>
+            <DataGrid x:Name="datos" HorizontalAlignment="Left" Height="212" Margin="39.5,267.2,0,0" VerticalAlignment="Top" Width="515">
+                <DataGrid.Effect>
+                    <DropShadowEffect ShadowDepth="4"/>
+                </DataGrid.Effect>
+            </DataGrid>
 
-        <Rectangle Fill="#FFF0B318" HorizontalAlignment="Left" Height="46" Margin="32,50,0,0" Stroke="#FFCB0C0C" VerticalAlignment="Top" Width="523" RadiusX="17" RadiusY="30">
-            <Rectangle.Effect>
-                <BlurEffect/>
-            </Rectangle.Effect>
-        </Rectangle>
-        <ComboBox x:Name="comboBox" Height="22" Margin="217,63,130,0" VerticalAlignment="Top">
-            <ComboBoxItem Content="Java" HorizontalAlignment="Left" Width="255"/>
-            <ComboBoxItem Content="C#" HorizontalAlignment="Left" Width="255"/>
-            <ComboBoxItem Content="NodeJs" HorizontalAlignment="Left" Width="255"/>
-            <ComboBoxItem Content="Python" HorizontalAlignment="Left" Width="255"/>
-            <ComboBoxItem Content="GO!" HorizontalAlignment="Left" Width="255"/>
-            <ComboBoxItem Content="PHP" HorizontalAlignment="Left" Width="255"/>
-        </ComboBox>
-        <Label x:Name="label" Content="Backend:" HorizontalAlignment="Left" Margin="119,59,0,0" VerticalAlignment="Top" Width="80" FontFamily="Source Code Pro Black" FontSize="14"/>
-        <Button x:Name="button" Foreground="White" Content="Enviar Solicitud" HorizontalAlignment="Left" Height="30.6" Margin="178.6,119.2,0,0" VerticalAlignment="Top" Width="97.2" Click="button_Click_1" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" TextOptions.TextHintingMode="Animated" d:LayoutOverrides="HorizontalAlignment"/>
+            <Rectangle Fill="#FFF0B318" HorizontalAlignment="Left" Height="46" Margin="32,82,0,0" Stroke="#FFCB0C0C" VerticalAlignment="Top" Width="523" RadiusX="17" RadiusY="30">
+                <Rectangle.Effect>
+                    <BlurEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <ComboBox x:Name="comboBox" Height="22" Margin="217,95,130,0" VerticalAlignment="Top" Opacity="0.77" BorderThickness="0" Cursor="Hand">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0.127"/>
+                        <GradientStop Color="#FFAE3636" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="Java" HorizontalAlignment="Left" Width="255"/>
+                <ComboBoxItem Content="C#" HorizontalAlignment="Left" Width="255"/>
+                <ComboBoxItem Content="NodeJs" HorizontalAlignment="Left" Width="255"/>
+                <ComboBoxItem Content="Python" HorizontalAlignment="Left" Width="255"/>
+                <ComboBoxItem Content="GO!" HorizontalAlignment="Left" Width="255"/>
+                <ComboBoxItem Content="PHP" HorizontalAlignment="Left" Width="255"/>
+            </ComboBox>
+            <Label x:Name="label" Content="Backend:" HorizontalAlignment="Left" Margin="119,91,0,0" VerticalAlignment="Top" Width="80" FontFamily="Source Code Pro Black" FontSize="14"/>
+            <Button x:Name="button" BorderBrush="Black" Foreground="White" Content="Enviar Solicitud" HorizontalAlignment="Left" Height="31" Margin="119,172,0,0" VerticalAlignment="Top" Width="97" Click="button_Click_1" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" TextOptions.TextHintingMode="Animated" BorderThickness="3" Cursor="Hand" />
+            <Label x:Name="label1" Content="FRONTEND: CLIENTE-SERVIDOR" Height="46.8" Margin="10,10,10,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center"/>
+            <Button x:Name="btn_salir" BorderBrush="Black" Foreground="White" Content="Salir" HorizontalAlignment="Left" Height="31" Margin="405,172,0,0" VerticalAlignment="Top" Width="97" Click="btn_salir_Click" Background="#FFD74600" TextOptions.TextHintingMode="Animated" BorderThickness="3" Cursor="Hand" />
+            <Button x:Name="btn_limpiar" BorderBrush="Black" Foreground="White" Content="Limpiar" HorizontalAlignment="Left" Height="31" Margin="260,172,0,0" VerticalAlignment="Top" Width="97" Background="Chocolate" TextOptions.TextHintingMode="Animated" BorderThickness="3" Cursor="Hand" Click="btn_limpiar_Click" />
 
-    </Grid>
+        </Grid>
+    </Border>
 </Window>
