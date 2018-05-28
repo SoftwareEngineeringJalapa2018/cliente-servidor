@@ -58,11 +58,34 @@ namespace cliente_servidor
 
         public void crearRequest()
         {
+            
             string valor = comboBox.SelectionBoxItem.ToString();
-            string url = asignarUrl(valor);   
-            CVentas inventory = new CVentas(url);
-            List<Ventas> lista = inventory.request();
-            datos.ItemsSource = lista;
+            if (valor == "NodeJs" || valor == "Python" || valor == "GO")
+            {
+                string url = asignarUrl(valor);
+                CVentas inventory = new CVentas(url);
+                List<Ventas> lista = inventory.request();
+                datos.ItemsSource = lista;
+            }
+            else if (valor == "Java")
+            {
+                string url = asignarUrl(valor);
+                CVentas inventory = new CVentas(url);
+                List<VentasJava> lista = inventory.requestJava();
+                datos.ItemsSource = lista;
+            }else if(valor == "PHP")
+            {
+                string url = asignarUrl(valor);
+                CVentas inventory = new CVentas(url);
+                List<VentasPhp> lista = inventory.requestPhp();
+                datos.ItemsSource = lista;
+            }else if(valor == "C#")
+            {
+                string url = asignarUrl(valor);
+                CVentas inventory = new CVentas(url);
+                List<VentasC> lista = inventory.requestC();
+                datos.ItemsSource = lista;
+            }
         }
 
 
@@ -71,6 +94,16 @@ namespace cliente_servidor
         {
             //MessageBox.Show(asignarUrl(comboBox.SelectionBoxItem.ToString()));
             crearRequest();
+        }
+
+        private void btn_salir_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_limpiar_Click(object sender, RoutedEventArgs e)
+        {
+            datos.ItemsSource = null;
         }
     }
 }
